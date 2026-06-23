@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import Image from "next/image";
 import TrustBar from "../components/TrustBar"; // Path එක නිවැරදි කළා
+import PerformanceMatrix from "../components/PerformanceMatrix";
 
 export default function Home() {
   return (
@@ -89,6 +90,7 @@ export default function Home() {
 
       {/* Trust Bar එක සාර්ථකව මෙතනට සම්බන්ධ කළා */}
       <TrustBar />
+      <PerformanceMatrix />
     </>
   );
 }
