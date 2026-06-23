@@ -12,7 +12,7 @@ export default function Home() {
       {/* 1. Fully Covered Immersive Hero Video/Image Layer */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero-bg.jpg" 
+          src="/me.jpg" 
           alt="Tranquil forest stream sanctuary"
           fill
           priority
