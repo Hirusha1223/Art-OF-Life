@@ -3,14 +3,15 @@
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import Image from "next/image";
-import TrustBar from "../components/TrustBar"; // Path එක නිවැරදි කළා
+import TrustBar from "../components/TrustBar"; 
 import PerformanceMatrix from "../components/PerformanceMatrix";
 
 export default function Home() {
   return (
     <>
-      <main className="relative min-h-screen w-full overflow-hidden bg-midnight">
-        {/* 1. Fully Covered Immersive Hero Video/Image Layer */}
+      
+<main className="relative min-h-screen w-full overflow-hidden bg-midnight">
+        {/* 1. Immersive Hero Image Layer */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/me.jpg" 
@@ -19,22 +20,21 @@ export default function Home() {
             priority
             className="object-cover object-center scale-105"
           />
-          {/* Text contrast එක රැකගන්න දාන 35% Premium Overlay එක */}
-          <div className="absolute inset-0 bg-midnight/35 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-[--color-midnight]/35 backdrop-blur-[1px]" />
         </div>
 
         {/* 2. Floating Luxury Navbar Layout */}
-        <header className="relative z-50 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto backdrop-blur-sm bg-alabaster/10 mt-4 rounded-full border border-white/10">
+        <header className="relative z-50 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto backdrop-blur-sm bg-[--color-alabaster]/10 mt-4 rounded-full border border-white/10">
           <div className="font-serif text-xl font-bold tracking-wider text-white">
             ∞ The Art of Life
           </div>
           <nav className="hidden md:flex items-center space-x-12 text-xs uppercase tracking-[0.2em] text-white/80">
-            <a href="#" className="hover:text-champagne transition-colors">Philosophy</a>
-            <a href="#" className="hover:text-champagne transition-colors">Curations</a>
-            <a href="#" className="hover:text-champagne transition-colors">Founders</a>
-            <a href="#" className="hover:text-champagne transition-colors">Sanctuary</a>
+            <a href="#" className="hover:text-[--color-champagne] transition-colors">Philosophy</a>
+            <a href="#" className="hover:text-[--color-champagne] transition-colors">Curations</a>
+            <a href="#" className="hover:text-[--color-champagne] transition-colors">Founders</a>
+            <a href="#" className="hover:text-[--color-champagne] transition-colors">Sanctuary</a>
           </nav>
-          <button className="text-xs uppercase tracking-widest text-white border border-champagne px-6 py-2.5 rounded-full bg-midnight/40 hover:bg-champagne hover:text-midnight transition-all duration-300">
+          <button className="text-xs uppercase tracking-widest text-white border border-[--color-champagne] px-6 py-2.5 rounded-full bg-[--color-midnight]/40 hover:bg-[--color-champagne] hover:text-[--color-midnight] transition-all duration-300">
             Request Private Invitation
           </button>
         </header>
@@ -68,12 +68,12 @@ export default function Home() {
               transition={{ duration: 1, delay: 0.6 }}
               className="pt-4"
             >
-              <button className="group flex items-center space-x-4 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl hover:border-champagne/60 transition-all duration-500">
-                <div className="w-12 h-12 bg-champagne rounded-full flex items-center justify-center p-3.5 group-hover:scale-110 transition-transform duration-300">
-                  <Play className="fill-midnight text-midnight w-5 h-5" />
+              <button className="group flex items-center space-x-4 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl hover:border-[--color-champagne]/60 transition-all duration-500">
+                <div className="w-12 h-12 bg-[--color-champagne] rounded-full flex items-center justify-center p-3.5 group-hover:scale-110 transition-transform duration-300">
+                  <Play className="fill-[--color-midnight] text-[--color-midnight] w-5 h-5" />
                 </div>
                 <div className="text-left pr-4">
-                  <p className="text-xs uppercase tracking-[0.2em] text-champagne font-semibold">Begin Immersion</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-[--color-champagne] font-semibold">Begin Immersion</p>
                   <p className="text-xs text-white/60 font-light mt-0.5">60-Second Pause Protocol</p>
                 </div>
               </button>
@@ -88,7 +88,6 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Trust Bar එක සාර්ථකව මෙතනට සම්බන්ධ කළා */}
       <TrustBar />
       <PerformanceMatrix />
     </>
