@@ -12,7 +12,7 @@ export default function Home() {
         {/* 1. Fully Covered Immersive Hero Video/Image Layer */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero-bg.jpg" 
+            src="/me.jpg" 
             alt="Tranquil forest stream sanctuary"
             fill
             priority
@@ -83,7 +83,7 @@ export default function Home() {
         {/* 4. Scroll Decelerator Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center space-y-2">
           <span className="text-[10px] uppercase tracking-[0.3em] text-white/50">Scroll to Decelerate</span>
-          <div className="w-px h-12 bg-gradient-to-b from-white/50 to-transparent" />
+          <div className="w-px h-12 bg-linear-to-b from-white/50 to-transparent" />
         </div>
       </main>
 
