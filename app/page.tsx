@@ -5,6 +5,7 @@ import { Play } from "lucide-react";
 import Image from "next/image";
 import TrustBar from "../components/TrustBar"; 
 import PerformanceMatrix from "../components/PerformanceMatrix";
+import SanctuaryCurations from "../components/SanctuaryCurations";
 
 export default function Home() {
   return (
@@ -90,6 +91,7 @@ export default function Home() {
 
       <TrustBar />
       <PerformanceMatrix />
+      <SanctuaryCurations />
     </>
   );
 }
