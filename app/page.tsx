@@ -6,6 +6,7 @@ import Image from "next/image";
 import TrustBar from "../components/TrustBar"; 
 import PerformanceMatrix from "../components/PerformanceMatrix";
 import SanctuaryCurations from "../components/SanctuaryCurations";
+import FoundersPhilosophy from "../components/FoundersPhilosophy";
 
 export default function Home() {
   return (
@@ -92,6 +93,7 @@ export default function Home() {
       <TrustBar />
       <PerformanceMatrix />
       <SanctuaryCurations />
+      <FoundersPhilosophy />
     </>
   );
 }
