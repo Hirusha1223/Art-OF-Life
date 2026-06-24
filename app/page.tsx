@@ -7,6 +7,7 @@ import TrustBar from "../components/TrustBar";
 import PerformanceMatrix from "../components/PerformanceMatrix";
 import SanctuaryCurations from "../components/SanctuaryCurations";
 import FoundersPhilosophy from "../components/FoundersPhilosophy";
+import InvitationFooter from "../components/InvitationFooter";
 
 export default function Home() {
   return (
@@ -94,6 +95,7 @@ export default function Home() {
       <PerformanceMatrix />
       <SanctuaryCurations />
       <FoundersPhilosophy />
+      <InvitationFooter />
     </>
   );
 }
