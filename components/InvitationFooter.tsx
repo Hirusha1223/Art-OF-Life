@@ -20,10 +20,10 @@ export default function InvitationFooter() {
     // ⚠️ මෙතන තියෙන ACCOUNT_KEYS ටික පියවර 3 දී අපි මාරු කරමු
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",     // EmailJS සර්විස් ID එක
-        "YOUR_TEMPLATE_ID",    // EmailJS ටෙම්ප්ලේට් ID එක
+        "service_hdtn0ew",     // EmailJS සර්විස් ID එක
+        "template_7l32js6",    // EmailJS ටෙම්ප්ලේට් ID එක
         formRef.current,
-        "YOUR_PUBLIC_KEY"      // EmailJS පබ්ලික් කී එක
+        "Qx8LGYu1oSJ3jrN87"      // EmailJS පබ්ලික් කී එක
       )
       .then(
         () => {

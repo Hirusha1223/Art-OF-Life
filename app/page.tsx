@@ -10,34 +10,48 @@ import FoundersPhilosophy from "../components/FoundersPhilosophy";
 import InvitationFooter from "../components/InvitationFooter";
 
 export default function Home() {
+  // 🛠️ බටන් එක ක්ලික් කළාම ස්මූත් විදිහට ඉන්විටේෂන් ෆෝම් එකට ස්ක්‍රෝල් කරවන ෆන්ක්ෂන් එක
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
-      
-<main className="relative min-h-screen w-full overflow-hidden bg-midnight">
+      {/* 🛠️ Tailwind v4 Specificity ගැටලුව මඟහරවා ගන්න main එකට සෘජුවම inline style පසුබිම දුන්නා */}
+      <main style={{ backgroundColor: '#1B263B' }} className="relative min-h-screen w-full overflow-hidden">
         {/* 1. Immersive Hero Image Layer */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/me.jpg" 
+            src="/hero2.jpg" 
             alt="Tranquil forest stream sanctuary"
             fill
             priority
             className="object-cover object-center scale-105"
           />
-          <div className="absolute inset-0 bg-[--color-midnight]/35 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-[#1B263B]/35 backdrop-blur-[1px]" />
         </div>
 
         {/* 2. Floating Luxury Navbar Layout */}
-        <header className="relative z-50 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto backdrop-blur-sm bg-[--color-alabaster]/10 mt-4 rounded-full border border-white/10">
-          <div className="font-serif text-xl font-bold tracking-wider text-white">
+        <header className="relative z-50 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto backdrop-blur-sm bg-white/10 mt-4 rounded-full border border-white/10">
+          <div className="font-serif text-xl font-bold tracking-wider text-white cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             ∞ The Art of Life
           </div>
+          
+          {/* 🛠️ මෙතන තියෙන හැම ලින්ක් එකකටම ස්මූත් ස්ක්‍රෝල් ඇඩ් කළා */}
           <nav className="hidden md:flex items-center space-x-12 text-xs uppercase tracking-[0.2em] text-white/80">
-            <a href="#" className="hover:text-[--color-champagne] transition-colors">Philosophy</a>
-            <a href="#" className="hover:text-[--color-champagne] transition-colors">Curations</a>
-            <a href="#" className="hover:text-[--color-champagne] transition-colors">Founders</a>
-            <a href="#" className="hover:text-[--color-champagne] transition-colors">Sanctuary</a>
+            <button onClick={() => scrollToSection("philosophy")} className="hover:text-[#C5A880] transition-colors cursor-pointer bg-transparent border-none outline-none">Philosophy</button>
+            <button onClick={() => scrollToSection("curations")} className="hover:text-[#C5A880] transition-colors cursor-pointer bg-transparent border-none outline-none">Curations</button>
+            <button onClick={() => scrollToSection("founders")} className="hover:text-[#C5A880] transition-colors cursor-pointer bg-transparent border-none outline-none">Founders</button>
+            <button onClick={() => scrollToSection("invitation")} className="hover:text-[#C5A880] transition-colors cursor-pointer bg-transparent border-none outline-none">Sanctuary</button>
           </nav>
-          <button className="text-xs uppercase tracking-widest text-white border border-[--color-champagne] px-6 py-2.5 rounded-full bg-[--color-midnight]/40 hover:bg-[--color-champagne] hover:text-[--color-midnight] transition-all duration-300">
+          
+          <button 
+            onClick={() => scrollToSection("invitation")}
+            className="text-xs uppercase tracking-widest text-white border border-[#C5A880] px-6 py-2.5 rounded-full bg-[#1B263B]/40 hover:bg-[#C5A880] hover:text-[#1B263B] transition-all duration-300 cursor-pointer"
+          >
             Request Private Invitation
           </button>
         </header>
@@ -71,12 +85,15 @@ export default function Home() {
               transition={{ duration: 1, delay: 0.6 }}
               className="pt-4"
             >
-              <button className="group flex items-center space-x-4 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl hover:border-[--color-champagne]/60 transition-all duration-500">
-                <div className="w-12 h-12 bg-[--color-champagne] rounded-full flex items-center justify-center p-3.5 group-hover:scale-110 transition-transform duration-300">
-                  <Play className="fill-[--color-midnight] text-[--color-midnight] w-5 h-5" />
+              <button 
+                onClick={() => scrollToSection("philosophy")}
+                className="group flex items-center space-x-4 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl hover:border-[#C5A880]/60 transition-all duration-500 cursor-pointer"
+              >
+                <div className="w-12 h-12 bg-[#C5A880] rounded-full flex items-center justify-center p-3.5 group-hover:scale-110 transition-transform duration-300">
+                  <Play className="fill-[#1B263B] text-[#1B263B] w-5 h-5" />
                 </div>
                 <div className="text-left pr-4">
-                  <p className="text-xs uppercase tracking-[0.2em] text-[--color-champagne] font-semibold">Begin Immersion</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-[#C5A880] font-semibold">Begin Immersion</p>
                   <p className="text-xs text-white/60 font-light mt-0.5">60-Second Pause Protocol</p>
                 </div>
               </button>
@@ -92,10 +109,23 @@ export default function Home() {
       </main>
 
       <TrustBar />
-      <PerformanceMatrix />
-      <SanctuaryCurations />
-      <FoundersPhilosophy />
-      <InvitationFooter />
+
+      {/* 🛠️ ID එකතු කරමින් සෙක්ෂන්ස් ටික වට කළා */}
+      <div id="philosophy">
+        <PerformanceMatrix />
+      </div>
+
+      <div id="curations">
+        <SanctuaryCurations />
+      </div>
+
+      <div id="founders">
+        <FoundersPhilosophy />
+      </div>
+
+      <div id="invitation">
+        <InvitationFooter />
+      </div>
     </>
   );
 }
