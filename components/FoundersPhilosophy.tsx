@@ -17,7 +17,7 @@ export default function FoundersPhilosophy() {
           {/* Left Side: Immersive Portrait Image Area (5 Columns) */}
           <div className="lg:col-span-5 relative w-full aspect-[4/5] md:aspect-[3/4] lg:aspect-[4/5] rounded-2xl overflow-hidden bg-white/5 group">
             <Image
-              src="/me.jpg" 
+              src="/hero2.jpg" 
               alt="Founder of The Art of Life"
               fill
               sizes="(max-w-1024px) 100vw, 40vw"
